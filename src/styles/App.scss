@@ -1,0 +1,74 @@
+// common styles
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto; 
+  padding: 10px;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.search-box {
+  max-width: 760px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  .search-box-input {
+    font-size: 20px;
+    border: none;
+    height: 2em;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.collapsible {
+  margin: 20px 0;
+  .collapsible-title {
+    color: var(--on-primary-secondary-bg-surface-high-importance, #2f3037);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .collapsible-body {
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+  }
+}

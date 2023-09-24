@@ -1,0 +1,117 @@
+.ProductsPage {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    @media screen and (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  
+    .brand-logo {
+      cursor: pointer;
+      width: fit-content;
+      background-size: cover;
+      height: 100%;
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+    }
+  
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(239px, 1fr));
+      gap: 20px;
+      .product-grid {
+        @media screen and (max-width: 428px) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+      }
+      .product-card {
+        max-width: 239px;
+        border-radius: 5px 5px 0 0;
+        .product-title {
+          font-size: 18px;
+          margin: 10px 0;
+        }
+        .original-price {
+          text-decoration: line-through;
+          color: #ccc;
+        }
+        .product-price {
+          color: #6d84ff;
+          font-family: Inter;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+  
+        .product-banner {
+          width: fit-content;
+          position: relative;
+          min-height: 325px;
+          background-color: #eeeeee63;
+          &:hover .view-product {
+            height: 50px;
+          }
+          .like-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+          }
+          .view-product {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            display: flex;
+            height: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(109, 132, 255, 0.71);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .filters {
+      margin-top: 100px;
+      @media screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    .collapsible-filters {
+      min-height: 70px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 0 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      visibility: hidden;
+      @media screen and (max-width: 992px) {
+        visibility: visible;
+      }
+    }
+    .filter-card {
+      margin-bottom: 15px;
+      label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        input[type="checkbox"] {
+          cursor: pointer;
+          height: 22px;
+          width: 22px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
