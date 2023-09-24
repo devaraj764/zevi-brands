@@ -1,5 +1,5 @@
 import React from 'react'
-import { CiSearch } from 'react-icons/ci'
+import { CiCircleRemove, CiSearch } from 'react-icons/ci'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 type Props = {
@@ -44,7 +44,12 @@ const SearchBox: React.FC<Props> = (props) => {
             <input
                 onFocus={() => props.focused ? props.focused(true) : null}
                 value={props.text} onChange={handleInputChange} className="search-box-input" type="text" placeholder="Search" />
-            <CiSearch size={42} color='#200E3266' />
+            {
+                props.text === '' ?
+                    <CiSearch size={42} color='#200E3266' />
+                    :
+                    <CiCircleRemove style={{cursor:'pointer'}} size={42} color='#200E3266' onClick={() => props.setText('')} />
+            }
         </div>
     )
 }

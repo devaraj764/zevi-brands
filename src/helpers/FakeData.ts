@@ -64,7 +64,6 @@ const checkIfPriceMatches = (pricing: number[][], price: number) => {
 
 export function FilterProducts({ search, brands, pricing, ratings, data }: FilterProps) {
   var filteredProducts = data;
-  console.log(search)
 
   if (brands && brands.length > 0) {
     filteredProducts = filteredProducts.filter((product: ProductType) => brands.includes(product.productBrand))
